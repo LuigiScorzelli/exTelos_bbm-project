@@ -25,10 +25,10 @@
 import BModal from "buefy/src/components/modal/Modal";
 export default {
   name: "AlertDialog",
-  components: {BModal},
+  components: { BModal },
   props: {
-    isActive: {type: Boolean},
-    showConfirm: { type: Boolean, default: true}
+    isActive: { type: Boolean },
+    showConfirm: { type: Boolean, default: true }
   },
   methods: {
     onConfirm() {
@@ -36,7 +36,7 @@ export default {
     },
     onCancel() {
       this.$emit("cancel");
-    },
+    }
   }
-}
+};
 </script>
