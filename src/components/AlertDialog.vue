@@ -1,22 +1,20 @@
 <template>
   <b-modal :active.sync="isActive" :can-cancel="false" has-modal-card>
     <div class="modal-card" style="width: auto">
-      <section class="section">
         <header class="modal-card-head">
           <h2>
             <slot name="headerMessage"></slot>
           </h2>
         </header>
-        <div class="modal-card-body">
+        <section class="modal-card-body">
           <slot name="content"></slot>
-        </div>
+        </section>
         <slot name="footer">
           <footer class="modal-card-foot">
             <button class="button" @click="onCancel">Chiudi</button>
             <button v-if="showConfirm" class="button is-primary" @click="onConfirm">Ok</button>
           </footer>
         </slot>
-      </section>
     </div>
   </b-modal>
 </template>

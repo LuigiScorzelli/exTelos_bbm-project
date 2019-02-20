@@ -9,7 +9,7 @@ import UsersUpdate from "./views/users/_id/update.vue";
 import TeamsIndex from "./views/teams/index";
 import TeamsCreate from "./views/teams/create";
 import TeamsUpdate from "./views/teams/_id/update";
-import JobsIndex from "./views/jobs/index";
+import EventsIndex from "./views/events/index";
 
 Vue.use(Router);
 
@@ -57,9 +57,9 @@ const router = new Router({
       component: TeamsUpdate
     },
     {
-      path: "/jobs",
-      name: "jobsIndex",
-      component: JobsIndex
+      path: "/events",
+      name: "eventIndex",
+      component: EventsIndex
     }
   ]
 });

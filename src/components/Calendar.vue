@@ -18,7 +18,7 @@
       :key="index1"
       class="columns is-multiline is-centered is-flex-mobile"
     >
-      <div v-for="(column, index2) in columns" :key="index2" :class="{ 'column day borderButton': true, 'other': !monthDays[column + row * 7].isCurrentMonth }">
+      <div v-for="(column, index2) in columns" :key="index2" :class="{ 'column day borderButton': true, 'other': !monthDays[column + row * 7].isCurrentMonth }" @click="setShowModal(column, row)">
         <p :class="{ 'tag is-primary is-rounded': isCurrentDay(column, row) }">{{ monthDays[column + row * 7].value }}</p>
       </div>
     </div>
@@ -139,6 +139,9 @@ export default {
       let newDate = this.baseDate.month(month-1);
       this.baseDate = this.$moment(newDate);
       this.printDayCalendar(this.baseDate);
+    },
+    setShowModal(column, row) {
+      this.$emit('show-modal', { column, row });
     }
   }
 };
@@ -152,5 +155,8 @@ export default {
 }
 .other {
   background-color: lightgray;
+}
+.column:hover {
+  background-color: aquamarine;
 }
 </style>
